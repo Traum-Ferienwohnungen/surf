@@ -15,7 +15,7 @@ static Bool zoomto96dpi     = TRUE;  /* Zoom pages to always emulate 96dpi */
 static guint defaultfontsize = 12;
 
 /* Webkit default features */
-static Bool enablescrollbars = TRUE;
+static Bool enablescrollbars = FALSE;
 static Bool enablespatialbrowsing = TRUE;
 static Bool enableplugins = TRUE;
 static Bool enablescripts = TRUE;

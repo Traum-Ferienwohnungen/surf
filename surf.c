@@ -659,6 +659,7 @@ newclient(void) {
 	WebKitWebFrame *frame;
 	GdkGeometry hints = { 1, 1 };
 	GdkScreen *screen;
+	gint screen_height, screen_width;
 	gdouble dpi;
 	char *uri, *ua;
 
@@ -685,7 +686,10 @@ newclient(void) {
 		 */
 		gtk_window_set_role(GTK_WINDOW(c->win), "Surf");
 	}
-	gtk_window_set_default_size(GTK_WINDOW(c->win), 800, 600);
+	screen = gtk_window_get_screen(GTK_WINDOW(c->win));
+	screen_height = gdk_screen_get_height(screen);
+	screen_width  = gdk_screen_get_width(screen);
+	gtk_window_set_default_size(GTK_WINDOW(c->win), screen_width, screen_height);
 	g_signal_connect(G_OBJECT(c->win),
 			"destroy",
 			G_CALLBACK(destroywin), c);
