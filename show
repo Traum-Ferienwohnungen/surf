@@ -1,0 +1,4 @@
+#!/bin/bash
+#
+export DISPLAY=:0.0
+xprop -id $(cat surf.wid) -format _SURF_GO 8s -set _SURF_GO "$1"

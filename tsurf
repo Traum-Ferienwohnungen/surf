@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+pkill -f X
+sleep 3
+X -s 0 -nocursor :0 >/dev/null 2>&1 &
+export DISPLAY=:0.0
+#
+./surf -x -G -b "http://www.google.com" 2>/dev/null > surf.wid &
