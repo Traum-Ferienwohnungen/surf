@@ -855,6 +855,12 @@ newclient(void) {
 			die("Error closing stdout");
                 }
 	}
+	
+	if(!fullscreenmode) {
+                gtk_window_unfullscreen(GTK_WINDOW(c->win));
+        } else {
+                gtk_window_fullscreen(GTK_WINDOW(c->win));
+        }
 
 	return c;
 }
@@ -1334,6 +1340,12 @@ main(int argc, char *argv[]) {
 		break;
 	case 'k':
 		kioskmode = 0;
+		break;
+	case 'f':
+		fullscreenmode = 0;
+		break;
+	case 'F':
+		fullscreenmode = 1;
 		break;
 	case 'K':
 		kioskmode = 1;
